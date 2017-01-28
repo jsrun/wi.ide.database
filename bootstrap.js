@@ -13,14 +13,14 @@
 let fs = require("fs");
 
 module.exports = (_this) => {  
-    _this.navbar.addItem("Database/New Connection...", {command: "webide:database:newconnection"}, 100);
-    _this.navbar.addItem("Database/Manage Connections...", {command: "webide:database:manageconnections", divide: true}, 100);
-    _this.navbar.addItem("Database/Create Containers...", {command: "webide:database:createcontainer"}, 100);
-    _this.navbar.addItem("Database/Manage Containers...", {command: "webide:database:managecontainers", divide: true}, 100);
+    _this.navbar.addItem("Database/New Connection...", {command: "webide:database:newconnection"}, 999);
+    _this.navbar.addItem("Database/Manage Connections...", {command: "webide:database:manageconnections", divide: true}, 999);
+    _this.navbar.addItem("Database/Create Containers...", {command: "webide:database:createcontainer"}, 999);
+    _this.navbar.addItem("Database/Manage Containers...", {command: "webide:database:managecontainers", divide: true}, 999);
     
     _this.sidebar.addItem("databases", {
         position: "left",
         display: "Databases",
         panel: fs.readFileSync(__dirname + "/databases.ejs")
-    });
-}
+    }, 200);
+};
